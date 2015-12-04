@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>jQuery IVH Select Text</title>
+    <style type="text/css" media="all">
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery IVH Select Text</h1>
+
+    <p>A jQuery plugin to smart select in text inputs.</p>
+
+    <p>Useful for e.g. building fancy autocomplete tools :), changing tires,
+    etc.</p>
+
+    <p>Text can be selected by providing a simple string to select or with a
+    regular expression. The examples below demonstrate the behavior of both.</p>
+
+    <div>
+      <input id="i1" type="text" value="wowza foo:bar blargus" />
+      <button data-sel="">all</button>
+      <button data-sel="foo:bar">
+        <code>'foo:bar'</code>
+      </button>
+      <button data-reg="(?!foo:)bar">
+        <code>/(?!foo:)bar/</code>
+      </button>
+    </div>
+
+    <div>
+      <input id="i2" type="text" value="foo:bar" />
+      <button data-sel="">all</button>
+      <button data-sel="foo:bar">
+        <code>'foo:bar'</code>
+      </button>
+      <button data-reg="(?!foo:)bar">
+        <code>/(?!foo:)bar/</code>
+      </button>
+    </div>
+
+    <div>
+      <input id="i3" type="text" value="foo:" />
+      <button data-sel="">all</button>
+      <button data-sel="foo:bar">
+        <code>'foo:bar'</code>
+      </button>
+      <button data-reg="(?!foo:)bar">
+        <code>/(?!foo:)bar/</code>
+      </button>
+    </div>
+
+    <div>
+      <input id="i4" type="text" value="" />
+      <button data-sel="">all</button>
+      <button data-sel="foo:bar">
+        <code>'foo:bar'</code>
+      </button>
+      <button data-reg="(?!foo:)bar">
+        <code>/(?!foo:)bar/</code>
+      </button>
+    </div>
+
+    <div>
+      <input id="i5" type="text" value="wowza" />
+      <button data-sel="">all</button>
+      <button data-sel="foo:bar">
+        <code>'foo:bar'</code>
+      </button>
+      <button data-reg="(?!foo:)bar">
+        <code>/(?!foo:)bar/</code>
+      </button>
+    </div>
+
+    <p>Visit the <a href="https://github.com/iVantage/jquery-ivh-select-text">
+    project home page</a> for usage details and more information.</p>
+
+    <p>Code released under the <a href="https://raw.githubusercontent.com/iVantage/jquery-ivh-select-text/master/LICENSE-MIT">MIT License</a>.</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://rawgit.com/iVantage/jquery-ivh-select-text/master/dist/jquery.ivh.select-text.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript" charset="utf-8">
+    $(function() {
+      $('button').click(function() {
+        var $this = $(this)
+          , selectText = $this.data('sel')
+          , selectReg = $this.data('reg');
+
+        var select = selectReg ?
+          new RegExp(selectReg) : selectText;
+
+        $(this)
+          .parent()
+          .find('input')
+          .ivhSelectText(select);
+      });
+    });
+    </script>
+  </body>
+</html>
