@@ -1,0 +1,31 @@
+{
+  "name": "jquery.ivh.input-select-text",
+  "version": "0.1.0",
+  "description": "A jQuery plugin to smart select in text inputs.",
+  "main": "dist/jquery.ivh.select-text.js",
+  "scripts": {
+    "build": "npm run clean && npm run copy && npm run uglify",
+    "clean": "rm dist/*.*",
+    "copy": "cp src/*.* dist/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "uglify": "uglifyjs src/jquery.ivh.select-text.js > dist/jquery.ivh.select-text.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivantage/jquery-ivh-select-text.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "select",
+    "jquery"
+  ],
+  "author": "jtrussell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivantage/jquery-ivh-select-text/issues"
+  },
+  "homepage": "https://github.com/ivantage/jquery-ivh-select-text#readme",
+  "devDependencies": {
+    "uglify-js": "^2.6.1"
+  }
+}

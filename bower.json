@@ -1,0 +1,23 @@
+{
+  "name": "jquery.ivh.input-select-text",
+  "description": "A jQuery plugin to smart select in text inputs.",
+  "main": "dist/jquery.ivh.select-text.js",
+  "authors": [
+    "jtrussell"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jquery-plugin",
+    "select",
+    "jquery"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
